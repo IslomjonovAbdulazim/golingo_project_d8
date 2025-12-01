@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:golingo_project_d8/onboarding/step_3_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pushable_button/pushable_button.dart';
+import 'package:get/get.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -41,6 +44,9 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
                 Spacer(),
                 PushableButton(
+                  onPressed: () {
+                    Get.to(Step3Page());
+                  },
                   hslColor: HSLColor.fromColor(Color(0xff068FFF)),
                   height: 56,
                   elevation: 5,
