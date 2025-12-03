@@ -47,7 +47,19 @@ class _Step14PageState extends State<Step14Page> {
               // Image, (Awesome! What topics do you like to talk about?)
               Expanded(
                 child: Wrap(
-                  children: options.map((value) => Container(child: Text(value))).toList(),
+                  children: options
+                      .map(
+                        (value) => Container(
+                          margin: EdgeInsets.only(right: 8, bottom: 8),
+                          padding: EdgeInsets.only(left: 16, top: 8, right: 16, bottom: 8),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Color(0xffE0E0E0)),
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                          child: Text(value),
+                        ),
+                      )
+                      .toList(),
                 ),
               ),
             ],
