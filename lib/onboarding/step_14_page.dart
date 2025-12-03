@@ -49,14 +49,28 @@ class _Step14PageState extends State<Step14Page> {
                 child: Wrap(
                   children: options
                       .map(
-                        (value) => Container(
-                          margin: EdgeInsets.only(right: 8, bottom: 8),
-                          padding: EdgeInsets.only(left: 16, top: 8, right: 16, bottom: 8),
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Color(0xffE0E0E0)),
-                            borderRadius: BorderRadius.circular(24),
+                        (value) => GestureDetector(
+                          onTap: () {
+                            selected.add(value);
+                            setState(() {});
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(right: 8, bottom: 8),
+                            padding: EdgeInsets.only(
+                              left: 16,
+                              top: 8,
+                              right: 16,
+                              bottom: 8,
+                            ),
+                            decoration: BoxDecoration(
+                              color: selected.contains(value)
+                                  ? Color(0xff068FFF)
+                                  : Colors.white,
+                              border: Border.all(color: Color(0xffE0E0E0)),
+                              borderRadius: BorderRadius.circular(24),
+                            ),
+                            child: Text(value),
                           ),
-                          child: Text(value),
                         ),
                       )
                       .toList(),
