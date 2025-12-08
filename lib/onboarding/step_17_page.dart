@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:golingo_project_d8/onboarding/step_18_page.dart';
+import 'package:golingo_project_d8/onboarding/step_20_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pushable_button/pushable_button.dart';
 import 'package:wheel_picker/wheel_picker.dart';
@@ -115,7 +116,7 @@ class _Step17PageState extends State<Step17Page> {
               Spacer(),
               PushableButton(
                 onPressed: () {
-                  Get.to(Step18Page());
+                  Get.to(Step20Page());
                 },
                 hslColor: HSLColor.fromColor(Color(0xff068FFF)),
                 height: 56,
