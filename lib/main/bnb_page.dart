@@ -31,6 +31,7 @@ class _BnbPageState extends State<BnbPage> {
           fontSize: 10,
           color: Color(0xff9E9E9E),
         ),
+        selectedItemColor: Color(0xff068FFF),
         type: BottomNavigationBarType.fixed,
         onTap: (value) {
           activePage = value;
@@ -40,22 +41,27 @@ class _BnbPageState extends State<BnbPage> {
         items: [
           BottomNavigationBarItem(
             icon: Image.asset("assets/home.png", height: 24),
+            activeIcon: Image.asset("assets/home.png", height: 24, color: Color(0xff068FFF)),
             label: "Home Page",
           ),
           BottomNavigationBarItem(
             icon: Image.asset("assets/word_cards.png", height: 24),
+            activeIcon: Image.asset("assets/word_cards.png", height: 24, color: Color(0xff068FFF)),
             label: "Word Cards",
           ),
           BottomNavigationBarItem(
             icon: Image.asset("assets/leaderboard.png", height: 24),
+            activeIcon: Image.asset("assets/leaderboard.png", height: 24, color: Color(0xff068FFF)),
             label: "Leaderboard",
           ),
           BottomNavigationBarItem(
             icon: Image.asset("assets/my_progress.png", height: 24),
+            activeIcon: Image.asset("assets/my_progress.png", height: 24, color: Color(0xff068FFF)),
             label: "My Progress",
           ),
           BottomNavigationBarItem(
             icon: Image.asset("assets/profile.png", height: 24),
+            activeIcon: Image.asset("assets/profile.png", height: 24, color: Color(0xff068FFF)),
             label: "Profile",
           ),
         ],
