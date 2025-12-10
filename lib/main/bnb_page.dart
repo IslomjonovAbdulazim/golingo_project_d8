@@ -23,8 +23,14 @@ class _BnbPageState extends State<BnbPage> {
     return Scaffold(
       body: pages[activePage],
       bottomNavigationBar: BottomNavigationBar(
-        selectedLabelStyle: GoogleFonts.nunito(fontSize: 10, color: Color(0xff068FFF)),
-        unselectedLabelStyle: GoogleFonts.nunito(fontSize: 10, color: Color(0xff9E9E9E)),
+        selectedLabelStyle: GoogleFonts.nunito(
+          fontSize: 10,
+          color: Color(0xff068FFF),
+        ),
+        unselectedLabelStyle: GoogleFonts.nunito(
+          fontSize: 10,
+          color: Color(0xff9E9E9E),
+        ),
         type: BottomNavigationBarType.fixed,
         onTap: (value) {
           activePage = value;
@@ -32,17 +38,26 @@ class _BnbPageState extends State<BnbPage> {
         },
         currentIndex: activePage,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home Page"),
-          BottomNavigationBarItem(icon: Icon(Icons.photo), label: "Word Cards"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.leaderboard),
+            icon: Image.asset("assets/home.png", height: 24),
+            label: "Home Page",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset("assets/word_cards.png", height: 24),
+            label: "Word Cards",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset("assets/leaderboard.png", height: 24),
             label: "Leaderboard",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bar_chart),
+            icon: Image.asset("assets/my_progress.png", height: 24),
             label: "My Progress",
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          BottomNavigationBarItem(
+            icon: Image.asset("assets/profile.png", height: 24),
+            label: "Profile",
+          ),
         ],
       ),
     );
