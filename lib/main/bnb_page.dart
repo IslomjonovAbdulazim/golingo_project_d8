@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:golingo_project_d8/profile/profile_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BnbPage extends StatefulWidget {
@@ -14,7 +15,7 @@ class _BnbPageState extends State<BnbPage> {
     Center(child: Text("Word Cards")),
     Center(child: Text("Leaderboard")),
     Center(child: Text("My progress")),
-    Center(child: Text("Account")),
+    ProfilePage(),
   ];
   int activePage = 4;
 
