@@ -1,6 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:golingo_project_d8/profile/app_appearance_page.dart';
+import 'package:golingo_project_d8/profile/billing_page.dart';
+import 'package:golingo_project_d8/profile/data_page.dart';
+import 'package:golingo_project_d8/profile/help_support_page.dart';
+import 'package:golingo_project_d8/profile/invite_page.dart';
+import 'package:golingo_project_d8/profile/linked_accounts_page.dart';
+import 'package:golingo_project_d8/profile/manage_courses_page.dart';
+import 'package:golingo_project_d8/profile/notifications_page.dart';
+import 'package:golingo_project_d8/profile/payment_methods_page.dart';
+import 'package:golingo_project_d8/profile/preferences_page.dart';
+import 'package:golingo_project_d8/profile/profile_edit_page.dart';
+import 'package:golingo_project_d8/profile/rate_us_page.dart';
+import 'package:golingo_project_d8/profile/security_page.dart';
+import 'package:golingo_project_d8/profile/upgrade_plan_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -43,18 +57,18 @@ class _ProfilePageState extends State<ProfilePage> {
   ];
 
   List<Widget> pages = [
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
+    PreferencesPage(),
+    ManageCoursesPage(),
+    NotificationsPage(),
+    SecurityPage(),
+    PaymentMethodsPage(),
+    BillingPage(),
+    LinkedAccountsPage(),
+    AppAppearancePage(),
+    DataPage(),
+    HelpSupportPage(),
+    InvitePage(),
+    RateUsPage(),
     Scaffold(),
   ];
 
@@ -66,11 +80,33 @@ class _ProfilePageState extends State<ProfilePage> {
           padding: EdgeInsets.all(16),
           child: Column(
             children: [
-              Container(),
-              Container(),
+              GestureDetector(
+                onTap: () {
+                  Get.to(UpgradePlanPage());
+                },
+                child: Image.asset("assets/premium_banner.png"),
+              ),
+              SizedBox(height: 16),
+              GestureDetector(
+                onTap: () {
+                  Get.to(ProfileEditPage());
+                },
+                child: Container(
+                  height: 80,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SizedBox(height: 16),
               Flexible(
                 fit: FlexFit.loose,
                 child: Container(
+                  padding: EdgeInsets.only(top: 8, bottom: 8),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: 13,
