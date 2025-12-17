@@ -52,18 +52,75 @@ class _SecurityPageState extends State<SecurityPage> {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
-                  children: List.generate(4, (index) {
-                    return ListTile(
-                      title: Text(titles[index]),
-                      trailing: CupertinoSwitch(
-                        value: actives[index],
-                        onChanged: (value) {
-                          actives[index] = value;
-                          setState(() {});
-                        },
+                  children: [
+                    Column(
+                      children: List.generate(4, (index) {
+                        return ListTile(
+                          title: Text(
+                            titles[index],
+                            style: GoogleFonts.nunito(
+                              color: Color(0xff212121),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          trailing: CupertinoSwitch(
+                            activeTrackColor: Color(0xff068FFF),
+                            value: actives[index],
+                            onChanged: (value) {
+                              actives[index] = value;
+                              setState(() {});
+                            },
+                          ),
+                        );
+                      }),
+                    ),
+                    SizedBox(height: 8),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16, right: 16),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                "Change Password",
+                                style: GoogleFonts.nunito(
+                                  color: Color(0xff212121),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Spacer(),
+                              Icon(CupertinoIcons.chevron_right),
+                            ],
+                          ),
+                          SizedBox(height: 8),
+                          Row(
+                            children: [
+                              Text(
+                                "Device Management",
+                                style: GoogleFonts.nunito(
+                                  color: Color(0xff212121),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Spacer(),
+                              Icon(CupertinoIcons.chevron_right),
+                            ],
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            "Manage your account on the various devices you own.",
+                            style: GoogleFonts.nunito(
+                              fontSize: 16,
+                              color: Color(0xff616161),
+                            ),
+                          ),
+                        ],
                       ),
-                    );
-                  }),
+                    ),
+                  ],
                 ),
               ),
             ],
