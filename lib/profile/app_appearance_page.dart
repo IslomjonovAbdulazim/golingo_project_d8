@@ -12,6 +12,8 @@ class AppAppearancePage extends StatefulWidget {
 }
 
 class _AppAppearancePageState extends State<AppAppearancePage> {
+  int current = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,23 +49,62 @@ class _AppAppearancePageState extends State<AppAppearancePage> {
                       onTap: () {
                         showModalBottomSheet(
                           context: context,
-                          builder: (context) => Container(
-                            width: 500,
-                            padding: EdgeInsets.all(20),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Container(
-                                  height: 3,
-                                  width: 38,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffEEEEEE),
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                          builder:
+                              (context) => StatefulBuilder(
+                                builder: (context, setState) {
+                                  return Container(
+                                    width: 500,
+                                    padding: EdgeInsets.only(
+                                      left: 20,
+                                      right: 20,
+                                      top: 10,
+                                      bottom: 10,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(12),
+                                        topRight: Radius.circular(12),
+                                      ),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Container(
+                                          height: 3,
+                                          width: 38,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xffEEEEEE),
+                                            borderRadius: BorderRadius.circular(20),
+                                          ),
+                                        ),
+                                        RadioListTile(
+                                          value: 1,activeColor: Color(0xff068FFF),
+                                          groupValue: current,
+                                          title: Text("System Default"),
+                                          onChanged: (value) {
+                                            setState(() {
+                                              current = 1;
+
+                                            });
+                                          },
+                                        ),
+                                        RadioListTile(
+                                          value: 2,
+                                          groupValue: current,
+                                          title: Text("Light"),
+                                          onChanged: (value) {
+                                            setState(() {
+                                              current = 2;
+
+                                            });
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                }
+                              ),
                         );
                       },
                       child: Row(
