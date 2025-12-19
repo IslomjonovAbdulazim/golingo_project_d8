@@ -105,6 +105,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         leading: Container(
           height: 32,
@@ -124,13 +125,14 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
           SizedBox(width: 12),
         ],
       ),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(16),
           child: Column(
             children: [
               Container(
-                height: 48,
+                height: 40,
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
                   color: Color(0xffF5F5F5),
@@ -138,9 +140,38 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                 ),
                 child: Row(
                   children: [
-                    Expanded(child: Container(color: Colors.blue)),
-                    Expanded(child: Container(color: Colors.grey)),
-                    Expanded(child: Container(color: Colors.grey)),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xff068FFF),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Weekly",
+                            style: GoogleFonts.nunito(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          "Monthly",
+                          style: GoogleFonts.nunito(fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          "Yearly",
+                          style: GoogleFonts.nunito(fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
