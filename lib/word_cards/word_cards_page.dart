@@ -114,7 +114,7 @@ class _WordCardsPageState extends State<WordCardsPage> {
                                 } else if (index == 2) {
                                   Get.to(QuizPage());
                                 } else if (index == 3) {
-                                  Get.to(TrueFalsePage());
+                                  Get.to(TrueFalsePage()); // hw
                                 } else if (index == 4) {
                                   Get.to(SpeakPage());
                                 }
