@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:golingo_project_d8/word_cards/card_page.dart';
+import 'package:golingo_project_d8/word_cards/flashcard_page.dart';
+import 'package:golingo_project_d8/word_cards/quiz_page.dart';
+import 'package:golingo_project_d8/word_cards/speak_page.dart';
+import 'package:golingo_project_d8/word_cards/true_false_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WordCardsPage extends StatefulWidget {
@@ -45,6 +51,20 @@ class _WordCardsPageState extends State<WordCardsPage> {
     "Profession",
     "Sports",
   ];
+  List<String> options = [
+    "Word Cards",
+    "Flashcard",
+    "Quiz",
+    "True False",
+    "Speak",
+  ];
+  List<String> optionsImages = [
+    "assets/word_cards.png",
+    "assets/flashcard.png",
+    "assets/quiz.png",
+    "assets/true_false.png",
+    "assets/speak.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -69,14 +89,40 @@ class _WordCardsPageState extends State<WordCardsPage> {
                 onTap: () {
                   showModalBottomSheet(
                     context: context,
+                    isScrollControlled: true,
                     builder: (context) {
                       return Container(
+                        width: 500,
+                        padding: EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(20),
                             topRight: Radius.circular(20),
                           ),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: List.generate(5, (index) {
+                            return ListTile(
+                              onTap: () {
+                                Get.back();
+                                if (index == 0) {
+                                  Get.to(CardPage());
+                                } else if (index == 1) {
+                                  Get.to(FlashcardPage());
+                                } else if (index == 2) {
+                                  Get.to(QuizPage());
+                                } else if (index == 3) {
+                                  Get.to(TrueFalsePage());
+                                } else if (index == 4) {
+                                  Get.to(SpeakPage());
+                                }
+                              },
+                              leading: Image.asset(optionsImages[index]),
+                              title: Text(options[index]),
+                            );
+                          }),
                         ),
                       );
                     },
