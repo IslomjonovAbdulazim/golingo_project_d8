@@ -109,23 +109,109 @@ class _ProgressPageState extends State<ProgressPage> {
               ),
               SizedBox(height: 12),
               if (selectedTab == 0)
-                Column(
-                  children: [
-                    Row(
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
                       children: [
-                        helperWidget(24, "Longest streak"),
-                        SizedBox(width: 4),
-                        helperWidget(3, "Current streak"),
-                        SizedBox(width: 4),
-                        helperWidget(201, "Learning days"),
+                        Row(
+                          children: [
+                            helperWidget(24, "Longest streak"),
+                            SizedBox(width: 4),
+                            helperWidget(3, "Current streak"),
+                            SizedBox(width: 4),
+                            helperWidget(201, "Learning days"),
+                          ],
+                        ),
+                        SizedBox(height: 12),
+                        Container(
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Growth Area"),
+                              Divider(),
+                              Image.asset("assets/progress_stats.png"),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 12),
+                        Row(
+                          children: [
+                            helperWidget(475, "Lessons passed"),
+                            SizedBox(width: 4),
+                            helperWidget(209, "Perfect lessons"),
+                            SizedBox(width: 4),
+                            helperWidget(682, "Words spoken"),
+                          ],
+                        ),
+                        SizedBox(height: 12),
+                        Row(
+                          children: [
+                            helperWidget(475, "Lessons passed"),
+                            SizedBox(width: 4),
+                            helperWidget(209, "Perfect lessons"),
+                            SizedBox(width: 4),
+                            helperWidget(682, "Words spoken"),
+                          ],
+                        ),
+                        SizedBox(height: 12),
+                        Container(
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Learning Day History"),
+                              Divider(),
+                              Image.asset("assets/progress_calendar.png"),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 12),
+                        Container(
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Learning Time Spent"),
+                              Divider(),
+                              Image.asset("assets/progress_bars.png"),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 12),
                       ],
                     ),
-                    Container(),
-                  ],
+                  ),
                 )
               else
-                Column(
-                  children: [],
+                Expanded(
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      childAspectRatio: 0.8
+                    ),
+                    itemCount: images.length,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          Image.asset(images[index], height: 90),
+                          Text(names[index], textAlign: TextAlign.center)
+                        ],
+                      );
+                    },
+                  ),
                 ),
             ],
           ),
