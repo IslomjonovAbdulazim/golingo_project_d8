@@ -39,23 +39,28 @@ class _FlashcardPageState extends State<FlashcardPage> {
             children: [
               SizedBox(height: 30),
               Expanded(
-                child: FlipCard(
-                  frontWidget: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12),
+                child: GestureDetector(
+                  onTap: () {
+                    flip.flipcard();
+                  },
+                  child: FlipCard(
+                    frontWidget: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Center(child: Text("Apple")),
                     ),
-                    child: Center(child: Text("Apple")),
-                  ),
-                  backWidget: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12),
+                    backWidget: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Image.asset("assets/apple.png"),
                     ),
-                    child: Image.asset("assets/apple.png"),
+                    controller: flip,
+                    rotateSide: RotateSide.right,
                   ),
-                  controller: flip,
-                  rotateSide: RotateSide.right,
                 ),
               ),
               SizedBox(height: 30),
