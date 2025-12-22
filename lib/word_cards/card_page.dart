@@ -67,12 +67,21 @@ class _CardPageState extends State<CardPage> {
                   return Container(
                     color: Colors.white,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Text(words[index]),
+                        Text(translations[index]),
                         // Text
                         Spacer(),
                         Image.asset(images[index]),
                         Spacer(),
                         // Speak button
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(height: 60,width: 60,color: Colors.blue),
+                          ],
+                        ),
                       ],
                     ),
                   );
