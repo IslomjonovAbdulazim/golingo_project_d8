@@ -15,12 +15,12 @@ class FlashcardPage extends StatefulWidget {
 class _FlashcardPageState extends State<FlashcardPage> {
   List<String> words = [
     "Apple",
-    "Apple",
+    "Nabo",
     "Apple",
   ];
   List<String> images = [
     "assets/apple.png",
-    "assets/apple.png",
+    "assets/nabo.png",
     "assets/apple.png",
   ];
   final flip = FlipCardController();
@@ -74,6 +74,19 @@ class _FlashcardPageState extends State<FlashcardPage> {
                       onPressed: () {
                         if (currentIndex == 0) return;
                         currentIndex--;
+                        setState(() {});
+                      },
+                      hslColor: HSLColor.fromColor(Colors.white),
+                      height: 56,
+                      elevation: 4,
+                      child: Text("Back"),
+                    ),
+                  ),
+                  Expanded(
+                    child: PushableButton(
+                      onPressed: () {
+                        if (currentIndex == 2) return;
+                        currentIndex++;
                         setState(() {});
                       },
                       hslColor: HSLColor.fromColor(Colors.white),
