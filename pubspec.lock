@@ -105,11 +105,27 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.1"
+  flip_board:
+    dependency: "direct main"
+    description:
+      name: flip_board
+      sha256: "5b3bb7cebc7daa3b950be773a910cca40ff1516972dfb7dd4c5c5d58c94b4416"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_flip_card:
+    dependency: "direct main"
+    description:
+      name: flutter_flip_card
+      sha256: cf67f31e85fa4452f493cac2f3c123bcacacb0f7feb3cc5f831faeea77cdc671
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.6"
   flutter_lints:
     dependency: "direct dev"
     description:
