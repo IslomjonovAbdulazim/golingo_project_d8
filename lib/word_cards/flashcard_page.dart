@@ -8,6 +8,17 @@ class FlashcardPage extends StatefulWidget {
 }
 
 class _FlashcardPageState extends State<FlashcardPage> {
+  List<String> words = [
+    "Apple",
+    "Apple",
+    "Apple",
+  ];
+  List<String> images = [
+    "assets/apple.png",
+    "assets/apple.png",
+    "assets/apple.png",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
