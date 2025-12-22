@@ -81,6 +81,8 @@ class _CardPageState extends State<CardPage> {
                   aspectRatio: 350 / 500,
                   enlargeCenterPage: true,
                   viewportFraction: .8,
+                  autoPlay: autoplay,
+                  autoPlayInterval: Duration(seconds: 1),
                 ),
               ),
               Spacer(),
