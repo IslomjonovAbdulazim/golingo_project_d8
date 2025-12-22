@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_flip_card/controllers/flip_card_controllers.dart';
 import 'package:flutter_flip_card/flipcard/flip_card.dart';
 import 'package:flutter_flip_card/flutter_flip_card.dart';
+import 'package:pushable_button/pushable_button.dart';
 
 class FlashcardPage extends StatefulWidget {
   const FlashcardPage({super.key});
@@ -49,14 +50,14 @@ class _FlashcardPageState extends State<FlashcardPage> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: Center(child: Text("Apple")),
+                      child: Center(child: Text(words[currentIndex])),
                     ),
                     backWidget: Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: Image.asset("assets/apple.png"),
+                      child: Image.asset(images[currentIndex]),
                     ),
                     controller: flip,
                     rotateSide: RotateSide.right,
@@ -66,7 +67,23 @@ class _FlashcardPageState extends State<FlashcardPage> {
               SizedBox(height: 30),
               Text("Tap to flip the card"),
               SizedBox(height: 30),
-              Row(children: []),
+              Row(
+                children: [
+                  Expanded(
+                    child: PushableButton(
+                      onPressed: () {
+                        if (currentIndex == 0) return;
+                        currentIndex--;
+                        setState(() {});
+                      },
+                      hslColor: HSLColor.fromColor(Colors.white),
+                      height: 56,
+                      elevation: 4,
+                      child: Text("Back"),
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 12),
             ],
           ),
