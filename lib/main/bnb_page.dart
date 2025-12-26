@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:golingo_project_d8/home/home_page.dart';
 import 'package:golingo_project_d8/leaderboard/leaderboard_page.dart';
 import 'package:golingo_project_d8/profile/profile_page.dart';
 import 'package:golingo_project_d8/progress/progress_page.dart';
@@ -14,13 +15,13 @@ class BnbPage extends StatefulWidget {
 
 class _BnbPageState extends State<BnbPage> {
   List<Widget> pages = [
-    Center(child: Text("Home Page")),
+    HomePage(),
     WordCardsPage(),
     LeaderboardPage(),
     ProgressPage(),
     ProfilePage(),
   ];
-  int activePage = 1;
+  int activePage = 0;
 
   @override
   Widget build(BuildContext context) {
