@@ -1,3 +1,4 @@
+import 'package:chiclet/chiclet.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -43,6 +44,22 @@ class _HomePageState extends State<HomePage> {
                           fontSize: 14,
                           color: Colors.white,
                         ),
+                      ),
+                    ],
+                  ),
+                );
+              } else {
+                return Padding(
+                  padding: const EdgeInsets.only(top: 4, bottom: 4),
+                  child: Row(
+                    children: [
+                      ChicletOutlinedAnimatedButton(
+                        onPressed: () {},
+                        width: 80,
+                        height: 60,
+                        buttonType: ChicletButtonTypes.oval,
+
+                        child: Icon(Icons.lock),
                       ),
                     ],
                   ),
